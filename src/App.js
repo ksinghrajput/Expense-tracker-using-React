@@ -24,11 +24,15 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = (expanseData) => {
+    console.log(expanseData)
+  }
   
   return (
     <div className="App">
       <h1>The complete guide about react</h1>
-      <NewExpence />
+      <NewExpence onAddExpense={addExpenseHandler}/>
       <Expenses expenses={expenses}/>
     </div>
   );
