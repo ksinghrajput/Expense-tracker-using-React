@@ -20,7 +20,7 @@ const ExpenseForm = (props) => {
 
     const submitHandler = (event) => {
         event.preventDefault();
-        let expenseData = { title, amount, date: new Date(date) }
+        let expenseData = { title, amount, date: new Date(date), id: Math.round(Math.random()*10) }
         props.onExpanseData(expenseData)
         setTitle('');
         setAmount('');
