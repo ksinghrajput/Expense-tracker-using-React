@@ -36,3 +36,7 @@
   .new-expense button.alternative:active {
     background-color: #ddb3f8;
   }
+
+  .new-expense__action {
+    text-align: center;
+  }

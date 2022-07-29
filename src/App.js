@@ -1,6 +1,7 @@
 import Expenses from './components/Expense/Expenses';
 import NewExpence from './components/NewExpence/NewExpence';
 import React, { useState } from 'react';
+import ShowInputFormButton from './components/Expense/ShowInputFormButton';
 
 const DUMMYEXPENSES = [
   {
@@ -26,15 +27,21 @@ const DUMMYEXPENSES = [
 
 function App() {
   const [expenses, setExpenses] = useState(DUMMYEXPENSES);
+  const [showInputForm, setShowInputForm] = useState(true)
 
   const addExpenseHandler = (expanseData) => {
     setExpenses((prevState) => [...prevState, expanseData])
   }
 
+  const InputFormVisibilityHandler = () => {
+    setShowInputForm(!showInputForm)
+  }
+
   return (
     <div className="App">
       <h1>The complete guide about react</h1>
-      <NewExpence onAddExpense={addExpenseHandler} />
+      {showInputForm && <ShowInputFormButton onInputFormVisibility={InputFormVisibilityHandler} />}
+      {!showInputForm && <NewExpence onAddExpense={addExpenseHandler} onInputFormVisibility={InputFormVisibilityHandler}/>}
       <Expenses expenses={expenses} />
     </div>
   );

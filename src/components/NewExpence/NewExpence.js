@@ -8,7 +8,7 @@ const NewExpence = (props) => {
     }
     return (
         <div className='new-expense'>
-            <ExpenseForm onExpanseData={expenseDataHandler}/>
+            <ExpenseForm onExpanseData={expenseDataHandler} onInputFormVisiblity={props.onInputFormVisibility}/>
         </div>
     );
 }
