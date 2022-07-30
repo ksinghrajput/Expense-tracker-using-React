@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The complete guide about react</h1>
+      <h1>Expense Tracker 🌴 🙂 </h1>
       {showInputForm && <ShowInputFormButton onInputFormVisibility={InputFormVisibilityHandler} />}
       {!showInputForm && <NewExpence onAddExpense={addExpenseHandler} onInputFormVisibility={InputFormVisibilityHandler}/>}
       <Expenses expenses={expenses} />
